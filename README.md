@@ -1,10 +1,5 @@
-<img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
+<img src="https://burhanulu.nl/wp-content/uploads/2025/01/BULU_AI_HD.png" style="height:64px;margin-right:32px"/>
 
-# Give me text as a code
-
-Absolutely! Here is the complete README file formatted as a single code block. You can copy this entire block and paste it directly into your `README.md` file.
-
-```markdown
 # 🚀 BULUBot - Next-Generation AI Assistant
 
 <div align="center">
@@ -42,34 +37,32 @@ BULUBot represents **Mr. BULU (Burhan Ulu)** - a seasoned DevOps & SRE professio
 
 ### **🤖 Intelligent Conversation Engine**
 ```
-
-✓ Multi-flow conversation management
-✓ Context-aware AI responses
-✓ Markdown-rich formatting
-✓ Real-time streaming responses
-✓ Conversation history persistence
+- Multi-flow conversation management
+- Context-aware AI responses
+- Markdown-rich formatting
+- Real-time streaming responses
+- Conversation history persistence
 
 ```
 
 ### **🛠️ Technical Excellence**
 ```
-
-✓ React 18+ with modern hooks
-✓ React Chatbotify 2.0+ framework
-✓ WebLLM integration (Qwen2 model)
-✓ Zero external API dependencies
-✓ Optimized bundle size (~2MB)
+- React 18+ with modern hooks
+- React Chatbotify 2.0+ framework
+- WebLLM integration (Qwen2 model)
+- Zero external API dependencies
+- Optimized bundle size (~2MB)
 
 ```
 
 ### **💼 Business Intelligence**
 ```
 
-✓ Service portfolio presentation
-✓ Project showcase integration
-✓ Contact \& scheduling automation
-✓ Lead generation workflows
-✓ Professional consultation booking
+- Service portfolio presentation
+- Project showcase integration
+- Contact \& scheduling automation
+- Lead generation workflows
+- Professional consultation booking
 
 ```
 
@@ -77,34 +70,32 @@ BULUBot represents **Mr. BULU (Burhan Ulu)** - a seasoned DevOps & SRE professio
 
 ## 🏗️ **Technical Architecture**
 
-```
-
+```mermaid
 flowchart TD
-A[User Interface] --> B[React Chatbotify]
-B --> C{Flow Router}
+    A[User Interface] --> B[React Chatbotify]
+    B --> C{Flow Router}
 
     C -->|Standard| D[Business Flows]
     C -->|AI Mode| E[WebLLM Provider]
-    
+
     D --> F[Service Info]
     D --> G[Contact Forms]
     D --> H[Project Gallery]
-    
+
     E --> I[Qwen2 Model]
     I --> J[AI Processing]
     J --> K[Streamed Response]
-    
+
     F --> L[Markdown Renderer]
     G --> L
     H --> L
     K --> L
-    
+
     L --> M[User Display]
-    
+
     style E fill:#ff6b6b
     style I fill:#4ecdc4
     style B fill:#45b7d1
-    ```
 
 ---
 
@@ -117,8 +108,6 @@ B --> C{Flow Router}
 
 ### **Development Setup**
 ```
-
-
 # 1. Clone \& Install
 
 git clone https://github.com/MrBULU/BULUAI.git
