@@ -1,4 +1,6 @@
-<img src="https://burhanulu.nl/wp-content/uploads/2025/01/BULU_AI_HD.png" style="height:64px;margin-right:32px"/>
+<img src="https://burhanulu.nl/wp-content/uploads/2025/01/BULU_AI_HD.png" 
+     style="max-height:64px; max-width:64px; margin-right:32px;" />
+
 
 # 🚀 BULUBot - Next-Generation AI Assistant
 
