@@ -265,32 +265,32 @@ We welcome contributions! Please follow these steps:
 This project is licensed under the MIT License - see [LICENSE](LICENSE) for details.
 
 ---
-
 ## 💬 **Support**
 
 <div align="center">
 
 **Need help or want to connect?**
 
-[![Email](https://img.shields.io/badge/Email-info%40burhanulu.com-red?style=for-the-badge&logo=gmail)](mailto:info@burhanulu.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-burhanulu-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/burhanulu)
-[![Website](https://img.shields.io/badge/Website-burhanulu.com-green?style=for-the-badge&logo=google-chrome)](https://burhanulu.com)
+[![Email](https://img.shields.io/badge/Email-info%40burhanulu.com-red?style=for-the-badge&logo=gmail)](mailto:info@burhanulu.com)  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-burhanulu-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/burhanulu)  
+[![Website](https://img.shields.io/badge/Website-burhanulu.com-green?style=for-the-badge&logo=google-chrome)](https://burhanulu.com)  
 [![Calendar](https://img.shields.io/badge/Schedule-Meeting-orange?style=for-the-badge&logo=calendly)](https://calendly.com/mrbulu)
 
 **🚀 Built with ❤️ by Mr. BULU • AI Enthusiast & DevOps Expert**
 
 </div>
-```
-<span style="display:none">[^1][^2][^3][^4][^5][^6][^7][^8][^9]</span>
-<div style="text-align: center">⁂</div>
 
-[^1]: https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks
-[^2]: https://docs.github.com/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
-[^3]: https://github.com/adam-p/markdown-here/wiki/markdown-cheatsheet
-[^4]: https://www.markdownguide.org/extended-syntax/
-[^5]: https://stackoverflow.com/questions/23226224/inline-code-syntax-highlighting-in-github-markdown
-[^6]: https://www.freecodecamp.org/news/github-flavored-markdown-syntax-examples/
-[^7]: https://docs.gitlab.com/user/markdown/
-[^8]: https://docs.github.com/de/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
-[^9]: https://github.com/jincheng9/markdown_supported_languages
-```
+---
+
+<div align="center">⁂</div>
+
+### 📚 Markdown References
+- [GitHub: Creating and Highlighting Code Blocks](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks)  
+- [GitHub: Basic Writing and Formatting Syntax](https://docs.github.com/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)  
+- [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/markdown-cheatsheet)  
+- [Markdown Guide (Extended Syntax)](https://www.markdownguide.org/extended-syntax/)  
+- [StackOverflow: Inline Code Highlighting](https://stackoverflow.com/questions/23226224/inline-code-syntax-highlighting-in-github-markdown)  
+- [FreeCodeCamp: GitHub-Flavored Markdown Examples](https://www.freecodecamp.org/news/github-flavored-markdown-syntax-examples/)  
+- [GitLab Markdown Docs](https://docs.gitlab.com/user/markdown/)  
+- [GitHub (German Docs)](https://docs.github.com/de/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)  
+- [Supported Languages for Highlighting](https://github.com/jincheng9/markdown_supported_languages)  
