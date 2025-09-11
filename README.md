@@ -1,13 +1,11 @@
-<p align="left">
-  <img src="https://burhanulu.nl/wp-content/uploads/2025/01/BULU_AI_HD.png" alt="BULU_AI Logo" width="150" height="150"/>
-</p>
-
 
 # 🚀 BULUBot - Next-Generation AI Assistant
 
 <div align="center">
 
-![BULUBot](https://burhanulu.nl/wp-content/uploads/2025/01/BULU_AI_HD.png)
+<p align="center">
+  <img src="https://burhanulu.nl/wp-content/uploads/2025/01/BULU_AI_HD.png" alt="BULU_AI Logo" width="150" height="150"/>
+</p>
 
 **Enterprise-Grade React Chatbot with Browser AI Integration**
 
