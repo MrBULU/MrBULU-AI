@@ -292,4 +292,5 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) for deta
 [^6]: https://www.freecodecamp.org/news/github-flavored-markdown-syntax-examples/
 [^7]: https://docs.gitlab.com/user/markdown/
 [^8]: https://docs.github.com/de/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
-[^9]: https://github.com/jincheng9/markdown_supported_languages```
+[^9]: https://github.com/jincheng9/markdown_supported_languages
+```
