@@ -21,7 +21,7 @@
 
 ## 🎯 **Overview**
 
-BULUBot represents **Mr. BULU (Burhan Ulu)** - a seasoned DevOps & SRE professional with 11+ years at Accenture. This intelligent chatbot serves as a digital business card, technical consultant, and AI-powered assistant, seamlessly bridging professional networking with cutting-edge AI technology.
+BULUBot represents **Mr. BULU (Burhan Ulu)** - a seasoned SRE professional. This intelligent chatbot serves as a digital business card, technical consultant, and AI-powered assistant, seamlessly bridging professional networking with cutting-edge AI technology.
 
 ### **🎪 What Makes BULUBot Unique?**
 
@@ -69,8 +69,6 @@ BULUBot represents **Mr. BULU (Burhan Ulu)** - a seasoned DevOps & SRE professio
 ---
 
 ## 🏗️ **Technical Architecture**
-
-```mermaid
 flowchart TD
     A[User Interface] --> B[React Chatbotify]
     B --> C{Flow Router}
@@ -97,8 +95,6 @@ flowchart TD
     style I fill:#4ecdc4
     style B fill:#45b7d1
 
----
-
 ## 🚀 **Quick Deploy**
 
 ### **Prerequisites**
@@ -108,66 +104,44 @@ flowchart TD
 
 ### **Development Setup**
 ```
-# 1. Clone \& Install
-
+# 1. Clone & Install
 git clone https://github.com/MrBULU/BULUAI.git
-cd BULUAI \&\& npm install
+cd BULUAI && npm install
 
 # 2. Start Development
-
 npm start
-
 # → http://localhost:3000
 
 # 3. Build for Production
-
 npm run build
-
 # → /build directory ready for deployment
-
 ```
-
 ### **WordPress Integration**
 ```
-
-
 # 1. Upload build files to server
-
 /public_html/bulubot/static/css/main.[hash].css
 /public_html/bulubot/static/js/main.[hash].js
 
 # 2. Install "Insert Headers and Footers" plugin
 
 # 3. Add integration code (see Installation section)
-
 ```
-
 ---
-
 ## 🔧 **Installation**
-
 ### **Option A: WordPress Plugin Method**
-
 1. **Upload Assets**
 ```
-
-
 # Via cPanel or FTP
-
 upload: build/static/* → /public_html/bulubot/static/
-
 ```
-
 2. **Headers Section**
 ```
-
    <link rel="stylesheet" href="/bulubot/static/css/main.HASH.css">
    <link rel="preload" href="/bulubot/static/js/main.HASH.js" as="script">
 ```
 
 3. **Footer Section**
 ```
-
    <div id="root"></div>
    <script src="/bulubot/static/js/main.HASH.js"></script>
    <style>
@@ -179,10 +153,6 @@ upload: build/static/* → /public_html/bulubot/static/
    }
    </style>
    ```
-
-### **Option B: CDN Deployment**
-Deploy to Netlify, Vercel, or GitHub Pages for global CDN delivery.
-
 ---
 
 ## ⚙️ **Configuration**
@@ -213,9 +183,7 @@ llmConnector: {
   })
 }
 ```
-
 ---
-
 ## 💬 **Conversation Flows**
 
 | Flow | Purpose | Features |
@@ -314,7 +282,6 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) for deta
 </div>
 ```
 <span style="display:none">[^1][^2][^3][^4][^5][^6][^7][^8][^9]</span>
-
 <div style="text-align: center">⁂</div>
 
 [^1]: https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks
