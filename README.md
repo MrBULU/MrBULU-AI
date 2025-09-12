@@ -1,5 +1,5 @@
 
-# 🚀 BULUBot - Next-Generation AI Assistant
+# 🚀 BULU AI Bot - Next-Generation Resume AI Assistant
 
 <div align="center">
 
@@ -7,7 +7,7 @@
   <img src="https://burhanulu.nl/wp-content/uploads/2025/01/BULU_AI_HD.png" alt="BULU_AI Logo" width="150" height="150"/>
 </p>
 
-**Enterprise-Grade React Chatbot with Browser AI Integration**
+**Personal React Chatbot with Browser AI Integration**
 
 ![React](https://img.shields.io/badge/React-18.0+-61DAFB?style=flat-square&logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-Ready-3178C6?style=flat-square&logo=typescript)
