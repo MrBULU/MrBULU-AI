@@ -98,6 +98,7 @@ flowchart TD
     style E fill:#ff6b6b
     style I fill:#4ecdc4
     style B fill:#45b7d1
+    ```
 
 ## 🚀 **Quick Deploy**
 
