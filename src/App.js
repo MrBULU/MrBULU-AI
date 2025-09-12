@@ -1,16 +1,20 @@
 import React from 'react';
 import ChatBot from 'react-chatbotify';
-import LlmConnector, { WebLlmProvider } from '@rcb-plugins/llm-connector';
+import LlmConnector, { OpenaiProvider } from '@rcb-plugins/llm-connector';
 import MarkdownRenderer from '@rcb-plugins/markdown-renderer';
 
-// 🎯 Optimized Conversation Flow with Official LLM Connector
+// 🔑 API Configuration
+const OPENAI_API_KEY = process.env.REACT_APP_OPENAI_API_KEY;
+const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
+
+// 🎯 Optimized Conversation Flow with OpenAI GPT-4o-mini
 const flow = {
   start: {
     message: "Hello! I'm **BULUBot** 🤖 Your personal AI assistant! How can I help you today?",
     renderMarkdown: ["BOT"],
     options: [
       "Who is BULU?", 
-      "My Services", 
+      "My Services",
       "Contacts", 
       "Projects", 
       "Schedule Meeting", 
@@ -40,7 +44,7 @@ const flow = {
 - **Self-hosted AI Platforms** 🤖
 - **Monitoring & Observability Best Practices** 📊
 - **Raspberry Pi Projects & IoT Solutions** 🔧
-- **Website & Web Shop Development** 💻`,
+- **Website & WebShop Development** 💻`,
         
         "Contacts": `## 📞 Let's Connect!
 
@@ -93,15 +97,14 @@ Perfect! Let's discuss your project:
         
         "AI Chat": `### 🧠 Activating Mr.BULU's AI Brain!
 
-I'll initialize my **advanced AI model** that runs completely in your browser:
+I'll connect you to my **OpenAI ** assistant:
 
-### Privacy & Performance
-- 🔐 **Privacy First:** Your conversations stay 100% private and secure!
-- 📦 **Browser-based:** No data leaves your device
-- ⚡ **Lightning Fast:** Direct browser inference
+### AI Features
+- 🔐 **Secure:** Direct OpenAI API connection
+- ⚡ **Fast:** Optimized for speed and efficiency
 
-*Ready to chat with AI BULU!? 
-ℹ️Click **"Start Over"** & Select **AI Chat!** 🤖✨`
+*Ready to chat with BULU AI!? 
+ℹ️Pleaae Click on **"Start Over"** & Select **AI Chat!** 🤖✨`
       };
       
       return responses[params.userInput] || `### I'm here to help! 💡
@@ -162,54 +165,48 @@ Feel free to reach out anytime at [info@burhanulu.com](mailto:info@burhanulu.com
     }
   },
 
-  // 🤖 AI-Powered Mode using Official WebLlmProvider
+  // 🤖 AI-Powered Mode using OpenAI GPT-4o-mini
   ai_mode: {
     llmConnector: {
-      provider: new WebLlmProvider({
-        model: 'Qwen2-0.5B-Instruct-q4f16_1-MLC',
-        systemPrompt: `You are BULU (Burhan), a DevOps & SRE expert with 11+ years at Accenture. You specialize in:
-- AIOps & Observability  
-- Site Reliability Engineering
-- Cloud Computing (AWS, Azure, GCP)
-- Self-hosted AI solutions
-- Docker & Kubernetes
-- Infrastructure monitoring
-- Raspberry Pi projects
+      provider: new OpenaiProvider({
+        mode: 'direct',                                    // ✅ Simplified for testing
+        model: 'gpt-4o-mini',                             // ✅ Correct model name
+        apiKey: OPENAI_API_KEY,                           // ✅ Direct API key
+        temperature: 0.7,
+        maxTokens: 500,                                   // ✅ Reduced for faster responses
+        systemPrompt: `You are BULU (Burhan), a AIOps, Observability SME & SRE Leader with 11+ years at Accenture. 
 
-Respond using markdown formatting for better readability. Use headers, bullet points, code blocks, and emphasis where appropriate. Keep responses concise (max 150 words) and practical. Be helpful and professional.`
+Specialties: AIOps, Observability, Site Reliability Engineering, Cloud Computing, Docker & Kubernetes, Infrastructure monitoring, Raspberry Pi projects.
+
+Keep responses concise (max 150 words), practical, and professional. Use markdown formatting. Always sign with "- BULU 🤖"`
       }),
-      outputType: 'character',
-      outputSpeed: 30,
-      historySize: 5,
-      initialMessage: `🧠 Mr.BULU's AI Mode - ACTIVE!
+      outputType: 'text',                                 // ✅ Simplified output
+      historySize: 5,                                     // ✅ Reduced for testing
+      initialMessage: `🧠 **Mr.BULU's AI Assistant - READY!**
 
-### 🎯 Ask me anything about:
+### 🎯 Ask me about:
 - **DevOps & SRE** best practices
-- **AIOps and Observability** strategies
-- **Cloud architecture** decisions
-- **Docker & Kubernetes** deployment
-- **Self-hosted AI** solutions
+- **Cloud architecture** decisions  
+- **Docker & Kubernetes** deployments
 - **Infrastructure monitoring**
 - **Raspberry Pi** projects
 
-🔐 **Your conversations are 100% private and secure!**
-💬 **Just type your question below...**`,
-      errorMessage: `## ⚠️ AI Processing Error
+💬 **What can I help you with?**`,
+      errorMessage: `## ⚠️ Connection Failed
 
-🔧 I had trouble processing your question. This can happen with complex queries or browser memory constraints.
+🔧 Unable to connect to OpenAI. Please check:
 
-### Try:
-- Simplifying your question
-- Refreshing the page
-- Contacting me directly
+- Your internet connection
+- API key is valid and has credits
+- Try refreshing the page
 
-📧 **Direct Contact:** [info@burhanulu.com](mailto:info@burhanulu.com)`
+📧 **Need help?** [info@burhanulu.com](mailto:info@burhanulu.com)`
     },
     renderMarkdown: ["BOT", "USER"]
   }
 };
 
-// 🎨 Enhanced UI Settings
+// 🎨 Enhanced UI Settings (Fixed JSX warnings)
 const settings = {
   general: {
     primaryColor: "#d67c06",
@@ -222,14 +219,14 @@ const settings = {
     avatar: "https://burhanulu.nl/wp-content/uploads/2025/01/BULU_AI_HD.png"
   },
   tooltip: {
-    mode: "CLOSE", // or "ALWAYS" to always show
-    text: "Try BULU AI 🤖" // ✅ Your custom tooltip text
+    mode: "CLOSE",
+    text: "👋 Try BULU AI "
   },
   chatButton: {
     icon: "🤖"
   },
   chatHistory: {
-    storageKey: "bulubot_v2_history",
+    storageKey: "bulubot_gpt4o_mini_history",
     maxEntries: 20
   },
   botBubble: {
@@ -237,22 +234,22 @@ const settings = {
     avatar: "https://burhanulu.nl/wp-content/uploads/2025/01/BULU_AI_HD.png"
   },
   notification: {
-    disabled: false,              // ✅ Keep notifications enabled
-    defaultToggledOn: true,       // ✅ Turn notifications on by default
-    alwaysShow: true,           // ✅ Don't always show the badge
-    showCount: true,            // ✅ Show notification count
-    icon: "🔔"                   // ✅ Notification icon
+    disabled: false,
+    defaultToggledOn: true,
+    alwaysShow: false,                                    // ✅ Fixed boolean
+    showCount: true,
+    icon: "🔔"
   },
   audio: {
-    disabled: true,              // ❌ DISABLE AUDIO/TTS - No voice reading
-    defaultToggledOn: false,     // ❌ Keep audio OFF
-    volume: 0.5                  // Volume setting (won't matter since disabled)
+    disabled: true,
+    defaultToggledOn: false,
+    volume: 0.5
   },
   voice: {
-    disabled: true               // ❌ DISABLE VOICE INPUT - No microphone
+    disabled: true
   },
   footer: {
-    text: "🚀 Powered by Mr.BULU • AI Enthusiast"
+    text: "🤖 Powered by Mr.BULU • AI Assistant"
   }
 };
 
@@ -266,7 +263,6 @@ const themes = [
 
 // 🚀 Main App Component
 function App() {
-  // ✅ Both plugins configured with best practices
   const plugins = [
     LlmConnector({
       autoConfig: true
@@ -275,6 +271,10 @@ function App() {
       autoConfig: true
     })
   ];
+
+// Debug API key
+console.log('API Key loaded:', OPENAI_API_KEY ? 'YES' : 'NO');
+console.log('Environment:', IS_DEVELOPMENT ? 'DEVELOPMENT' : 'PRODUCTION');
 
   return (
     <div className="App">
@@ -303,19 +303,19 @@ function App() {
         @media (max-width: 768px) {
           .rcb-chat-bot {
             width: 100% !important;
-            height: 100vh !important;
+            height: 100dvh !important;
           }
         }
 
         /* ✅ Enhanced markdown styling */
         .rcb-message-text h2 {
-          color:rgb(235, 172, 37) !important;
+          color: rgb(235, 172, 37) !important;
           margin-top: 0 !important;
           margin-bottom: 10px !important;
         }
         
         .rcb-message-text h3 {
-          color:rgb(0, 0, 0) !important;
+          color: rgb(0, 0, 0) !important;
           margin-bottom: 8px !important;
         }
         
@@ -325,7 +325,7 @@ function App() {
         }
         
         .rcb-message-text a {
-          color:rgb(235, 136, 37) !important;
+          color: rgb(235, 136, 37) !important;
           text-decoration: none !important;
         }
         
@@ -338,6 +338,11 @@ function App() {
           padding: 2px 4px !important;
           border-radius: 3px !important;
           font-size: 0.9em !important;
+        }
+
+        /* ✅ AI mode specific styling */
+        .rcb-message-text strong {
+          color: #d67c06 !important;
         }
       `}</style>
     </div>
