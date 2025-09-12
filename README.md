@@ -1,5 +1,5 @@
 
-# 🚀 BULUBot - Next-Generation AI Assistant
+# 🤖 BULU AI Bot - Next-Generation Resume AI Assistant
 
 <div align="center">
 
@@ -7,7 +7,7 @@
   <img src="https://burhanulu.nl/wp-content/uploads/2025/01/BULU_AI_HD.png" alt="BULU_AI Logo" width="150" height="150"/>
 </p>
 
-**Enterprise-Grade React Chatbot with Browser AI Integration**
+**Personal React Chatbot with Browser AI Integration**
 
 ![React](https://img.shields.io/badge/React-18.0+-61DAFB?style=flat-square&logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-Ready-3178C6?style=flat-square&logo=typescript)
@@ -256,14 +256,3 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) for deta
 ---
 
 <div align="center">⁂</div>
-
-### 📚 Markdown References
-- [GitHub: Creating and Highlighting Code Blocks](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks)  
-- [GitHub: Basic Writing and Formatting Syntax](https://docs.github.com/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)  
-- [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/markdown-cheatsheet)  
-- [Markdown Guide (Extended Syntax)](https://www.markdownguide.org/extended-syntax/)  
-- [StackOverflow: Inline Code Highlighting](https://stackoverflow.com/questions/23226224/inline-code-syntax-highlighting-in-github-markdown)  
-- [FreeCodeCamp: GitHub-Flavored Markdown Examples](https://www.freecodecamp.org/news/github-flavored-markdown-syntax-examples/)  
-- [GitLab Markdown Docs](https://docs.gitlab.com/user/markdown/)  
-- [GitHub (German Docs)](https://docs.github.com/de/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)  
-- [Supported Languages for Highlighting](https://github.com/jincheng9/markdown_supported_languages)  
