@@ -61,7 +61,7 @@ BULUBot represents **Mr. BULU (Burhan Ulu)** - a seasoned SRE professional. This
 
 - Service portfolio presentation
 - Project showcase integration
-- Contact \& scheduling automation
+- Contact & scheduling automation
 - Lead generation workflows
 - Professional consultation booking
 
@@ -69,7 +69,9 @@ BULUBot represents **Mr. BULU (Burhan Ulu)** - a seasoned SRE professional. This
 
 ---
 
-## 🏗️ **Technical Architecture**
+## 🏗️ Technical Architecture
+
+```mermaid
 flowchart TD
     A[User Interface] --> B[React Chatbotify]
     B --> C{Flow Router}
@@ -92,6 +94,7 @@ flowchart TD
 
     L --> M[User Display]
 
+    %% Styles
     style E fill:#ff6b6b
     style I fill:#4ecdc4
     style B fill:#45b7d1
@@ -101,7 +104,7 @@ flowchart TD
 ### **Prerequisites**
 - Node.js 16+ 
 - Modern browser with WebGL
-- WordPress site (for deployment)
+- CMS website site (for deployment)
 
 ### **Development Setup**
 ```
@@ -117,7 +120,7 @@ npm start
 npm run build
 # → /build directory ready for deployment
 ```
-### **WordPress Integration**
+### ** Only WordPress Integration**
 ```
 # 1. Upload build files to server
 /public_html/bulubot/static/css/main.[hash].css
@@ -178,7 +181,7 @@ const settings = {
 llmConnector: {
   provider: new WebLlmProvider({
     model: 'Qwen2-0.5B-Instruct-q4f16_1-MLC',
-    systemPrompt: `You are BULU, a DevOps & SRE expert...`,
+    systemPrompt: `You are BULU, a AIOps, Observability & SRE expert...`,
     outputSpeed: 30,
     historySize: 5
   })
@@ -277,7 +280,7 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) for deta
 [![Website](https://img.shields.io/badge/Website-burhanulu.com-green?style=for-the-badge&logo=google-chrome)](https://burhanulu.com)  
 [![Calendar](https://img.shields.io/badge/Schedule-Meeting-orange?style=for-the-badge&logo=calendly)](https://calendly.com/mrbulu)
 
-**🚀 Built with ❤️ by Mr. BULU • AI Enthusiast & DevOps Expert**
+**🚀 Built with ☕️ by Mr. BULU • AI Enthusiast & AIOps, Observability Expert**
 
 </div>
 
