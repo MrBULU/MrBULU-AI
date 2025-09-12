@@ -66,41 +66,8 @@ BULUBot represents **Mr. BULU (Burhan Ulu)** - a seasoned SRE professional. This
 - Professional consultation booking
 
 ```
-
 ---
 
-## 🏗️ Technical Architecture
-
-```mermaid
-flowchart TD
-    A[User Interface] --> B[React Chatbotify]
-    B --> C{Flow Router}
-
-    C -->|Standard| D[Business Flows]
-    C -->|AI Mode| E[WebLLM Provider]
-
-    D --> F[Service Info]
-    D --> G[Contact Forms]
-    D --> H[Project Gallery]
-
-    E --> I[Qwen2 Model]
-    I --> J[AI Processing]
-    J --> K[Streamed Response]
-
-    F --> L[Markdown Renderer]
-    G --> L
-    H --> L
-    K --> L
-
-    L --> M[User Display]
-
-    %% Styles
-    style E fill:#ff6b6b
-    style I fill:#4ecdc4
-    style B fill:#45b7d1
-    ```
-
-    
 ## 🚀 **Quick Deploy**
 
 ### **Prerequisites**
