@@ -1,5 +1,5 @@
 
-# 🚀 BULU AI Bot - Next-Generation Resume AI Assistant
+# 🤖 BULU AI Bot - Next-Generation Resume AI Assistant
 
 <div align="center">
 
