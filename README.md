@@ -10,8 +10,7 @@
 **Personal React Chatbot with Browser AI Integration**
 
 ![React](https://img.shields.io/badge/React-18.0+-61DAFB?style=flat-square&logo=react)
-![TypeScript](https://img.shields.io/badge/TypeScript-Ready-3178C6?style=flat-square&logo=typescript)
-![AI](https://img.shields.io/badge/AI-WebLLM-FF6B35?style=flat-square)
+![OpenAI](https://img.shields.io/badge/AI-OpenAI%20GPT--4o--mini-412991?style=flat-square&logo=openai)
 ![WordPress](https://img.shields.io/badge/WordPress-Compatible-21759B?style=flat-square&logo=wordpress)
 
 [📖 Documentation](#-documentation) • [🔧 Installation](#-installation) • [🎯 Features](#-core-features) • [💬 Support](#-support)
@@ -26,8 +25,8 @@ BULUBot represents **Mr. BULU (Burhan Ulu)** - a seasoned SRE professional. This
 
 ### **🎪 What Makes BULUBot Unique?**
 
-- **🧠 Browser-Native AI** - Zero server dependency for AI processing
-- **🔒 Privacy-First Architecture** - All data stays in user's browser
+- **🤖 OpenAI Integration** - Powered by GPT-4o-mini for intelligent responses
+- **🔒 Secure API Communication** - Environment-based API key management
 - **⚡ WordPress-Ready** - Plugin-based deployment in minutes
 - **📱 Mobile-Optimized** - Responsive design across all devices
 - **🎨 Professional Branding** - Custom-designed for business use
@@ -49,11 +48,10 @@ BULUBot represents **Mr. BULU (Burhan Ulu)** - a seasoned SRE professional. This
 ### **🛠️ Technical Excellence**
 ```
 - React 18+ with modern hooks
-- React Chatbotify 2.0+ framework
-- WebLLM integration (Qwen2 model)
-- Zero external API dependencies
+- React Chatbotify 2.3+ framework
+- OpenAI GPT-4o-mini integration
+- Real-time API responses
 - Optimized bundle size (~2MB)
-
 ```
 
 ### **💼 Business Intelligence**
@@ -71,25 +69,31 @@ BULUBot represents **Mr. BULU (Burhan Ulu)** - a seasoned SRE professional. This
 ## 🚀 **Quick Deploy**
 
 ### **Prerequisites**
-- Node.js 16+ 
-- Modern browser with WebGL
-- CMS website site (for deployment)
+- Node.js 16+
+- OpenAI API account with credits
+- Modern browser (Chrome/Firefox/Safari/Edge)
+- WordPress site (for deployment)
 
 ### **Development Setup**
-```
+```bash
 # 1. Clone & Install
-git clone https://github.com/MrBULU/BULUAI.git
-cd BULUAI && npm install
+git clone https://github.com/MrBULU/MrBULU-AI.git
+cd MrBULU-AI && npm install
 
-# 2. Start Development
+# 2. Configure Environment
+cp .env.example .env
+# Add your OpenAI API key to .env file:
+# REACT_APP_OPENAI_API_KEY=your-openai-api-key-here
+
+# 3. Start Development
 npm start
 # → http://localhost:3000
 
-# 3. Build for Production
+# 4. Build for Production
 npm run build
 # → /build directory ready for deployment
 ```
-### ** Only WordPress Integration**
+### **WordPress Integration**
 ```
 # 1. Upload build files to server
 /public_html/bulubot/static/css/main.[hash].css
@@ -127,7 +131,27 @@ upload: build/static/* → /public_html/bulubot/static/
    </style>
    ```
 ---
+---
 
+## 🔑 **Environment Variables**
+
+Create a `.env` file in your project root:
+
+```bash
+# Required: OpenAI API Configuration
+REACT_APP_OPENAI_API_KEY=your-openai-api-key-here
+```
+
+### **Getting Your OpenAI API Key**
+1. Visit [OpenAI Platform](https://platform.openai.com/api-keys)
+2. Sign up or log in to your account
+3. Create a new API key
+4. Add credits to your account for API usage
+5. Copy the key to your `.env` file
+
+⚠️ **Important**: Keep your API key secure and never commit it to version control.
+
+---
 ## ⚙️ **Configuration**
 
 ### **Appearance Customization**
@@ -146,12 +170,14 @@ const settings = {
 ```
 
 ### **AI Model Settings**
-```
+```javascript
 llmConnector: {
-  provider: new WebLlmProvider({
-    model: 'Qwen2-0.5B-Instruct-q4f16_1-MLC',
+  provider: new OpenaiProvider({
+    model: 'gpt-4o-mini',
+    apiKey: process.env.REACT_APP_OPENAI_API_KEY,
     systemPrompt: `You are BULU, a AIOps, Observability & SRE expert...`,
-    outputSpeed: 30,
+    temperature: 0.7,
+    maxTokens: 500,
     historySize: 5
   })
 }
@@ -174,9 +200,9 @@ llmConnector: {
 | Metric | Desktop | Mobile | Notes |
 |--------|---------|--------|-------|
 | **Initial Load** | 2-3s | 3-5s | CSS + JS loading |
-| **AI Model Load** | 10-15s | 15-30s | WebLLM initialization |
-| **Response Time** | <100ms | <200ms | Standard flows |
-| **Memory Usage** | 50-500MB | 200-800MB | Varies by AI usage |
+| **AI Response** | 1-2s | 2-4s | OpenAI API call |
+| **Response Time** | <100ms | <200ms | Static flows |
+| **Memory Usage** | 50-100MB | 100-200MB | Standard React app |
 | **Bundle Size** | 2.1MB | 2.1MB | Gzipped assets |
 
 ---
@@ -184,9 +210,10 @@ llmConnector: {
 ## 🛡️ **Security & Privacy**
 
 ### **Data Protection**
-- 🔒 **Zero Server Communication** - AI processing in browser
-- 📱 **Local Storage Only** - No external data transmission  
-- 🚫 **No Tracking** - Privacy-first architecture
+- 🔐 **API Key Security** - Environment variable configuration
+- 🌐 **OpenAI Integration** - Secure HTTPS API communication
+- 📱 **Local Chat History** - Browser storage only
+- 🚫 **No Personal Data Storage** - Privacy-focused design
 - ✅ **GDPR Compliant** - No personal data collection
 
 ### **Browser Support**
@@ -203,14 +230,14 @@ llmConnector: {
 
 **🚨 AI Processing Error**
 ```
-Cause: Browser memory constraints
-Fix: Use desktop browser, close other tabs, refresh page
+Cause: Invalid/missing OpenAI API key or insufficient credits
+Fix: Check API key in .env file, verify OpenAI account credits
 ```
 
 **📱 Mobile Performance**
 ```
-Cause: Limited mobile resources
-Fix: Ensure WebGL support, use Wi-Fi, close apps
+Cause: Slow network or API timeouts
+Fix: Ensure stable internet connection, check OpenAI API status
 ```
 
 **🎨 Styling Conflicts**
