@@ -216,7 +216,7 @@ const settings = {
   header: {
     title: "BULU AI 🤖",
     showAvatar: true,
-    avatar: "https://burhanulu.nl/wp-content/uploads/2025/01/BULU_AI_HD.png"
+    avatar: "https://burhanulu.com/wp-content/uploads/2025/01/BULU_AI_HD.png"
   },
   tooltip: {
     mode: "CLOSE",
@@ -231,7 +231,7 @@ const settings = {
   },
   botBubble: {
     showAvatar: true,
-    avatar: "https://burhanulu.nl/wp-content/uploads/2025/01/BULU_AI_HD.png"
+    avatar: "https://burhanulu.com/wp-content/uploads/2025/01/BULU_AI_HD.png"
   },
   notification: {
     disabled: false,

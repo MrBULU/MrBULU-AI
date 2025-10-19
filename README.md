@@ -4,7 +4,7 @@
 <div align="center">
 
 <p align="center">
-  <img src="https://burhanulu.nl/wp-content/uploads/2025/01/BULU_AI_HD.png" alt="BULU_AI Logo" width="150" height="150"/>
+  <img src="https://burhanulu.com/wp-content/uploads/2025/01/BULU_AI_HD.png" alt="BULU_AI Logo" width="150" height="150"/>
 </p>
 
 **Personal React Chatbot with Browser AI Integration**
@@ -140,7 +140,7 @@ const settings = {
   },
   header: {
     title: "Mr. BULU 🤖 | AI Assistant",
-    avatar: "https://burhanulu.nl/.../BULU_AI_HD.png"
+    avatar: "https://burhanulu.com/.../BULU_AI_HD.png"
   }
 };
 ```
