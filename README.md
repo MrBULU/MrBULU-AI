@@ -80,7 +80,9 @@ BULUBot represents **Mr. BULU (Burhan Ulu)** - a seasoned SRE professional. This
 git clone https://github.com/MrBULU/MrBULU-AI.git
 cd MrBULU-AI && npm install
 
-# 2. Configure Environment
+# 2. Automatic Setup (Optional)
+node setup.js
+# or manually:
 cp .env.example .env
 # Add your OpenAI API key to .env file:
 # REACT_APP_OPENAI_API_KEY=your-openai-api-key-here
@@ -132,7 +134,70 @@ upload: build/static/* → /public_html/bulubot/static/
    ```
 ---
 ---
+---
 
+## 🛠️ **Available npm Scripts**
+
+| Script | Purpose | Usage |
+|--------|---------|-------|
+| `npm start` | Start development server | `npm start` |
+| `npm run build` | Build for production | `npm run build` |
+| `npm test` | Run tests | `npm test` |
+| `npm run lint` | Lint and fix code | `npm run lint` |
+| `npm run deploy:check` | Verify build is ready for deployment | `npm run deploy:check` |
+| `npm run build:analyze` | Build and serve locally | `npm run build:analyze` |
+| `npm run clean` | Clean all dependencies and reinstall | `npm run clean` |
+
+---
+
+## 🚨 **Error Handling & Reliability**
+
+BULUBot now includes robust error handling to ensure better reliability:
+
+### **ErrorBoundary Component**
+- Catches React component errors gracefully
+- Displays user-friendly error messages
+- Provides recovery options
+- Prevents entire app from crashing
+
+### **API Key Validation**
+- Validates OpenAI API key on startup
+- Provides clear error messages if key is missing or invalid
+- Only logs in development mode (no secrets in production)
+- Helps developers quickly identify configuration issues
+
+### **Configuration Utilities**
+- Centralized config in `src/utils/config.js`
+- Environment-based configuration
+- Type-safe validation functions
+
+---
+
+## 📄 **Project Structure**
+
+```
+src/
+├── App.js                    # Main chatbot component with conversation flows
+├── index.js                  # React entry point
+├── App.css                   # Application styles
+├── components/
+│   └── ErrorBoundary.js      # Error handling wrapper component
+├── utils/
+│   └── config.js             # Configuration and API key validation
+├── setupTests.js             # Jest configuration
+└── reportWebVitals.js        # Performance monitoring
+
+public/
+├── index.html                # HTML template
+├── manifest.json             # PWA manifest
+└── favicon.ico               # App icon
+
+setup.js                       # Quick setup script for developers
+.env.example                   # Environment variables template
+package.json                   # Dependencies and scripts
+```
+
+---
 ## 🔑 **Environment Variables**
 
 Create a `.env` file in your project root:
