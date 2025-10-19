@@ -21,7 +21,7 @@
 
 ## 🎯 **Overview**
 
-BULUBot represents **Mr. BULU (Burhan Ulu)** - a seasoned SRE professional. This intelligent chatbot serves as a digital business card, technical consultant, and AI-powered assistant, seamlessly bridging professional networking with cutting-edge AI technology.
+**Mr. BULU (Burhan Ulu)** represents BULUBOT AI - a assistant that answers all your questions. This intelligent chatbot serves as a digital business card, technical consultant and AI-powered assistant, seamlessly bridging professional networking with cutting-edge AI technology.
 
 ### **🎪 What Makes BULUBot Unique?**
 
