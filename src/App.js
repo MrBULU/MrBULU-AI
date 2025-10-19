@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ChatBot from 'react-chatbotify';
 import LlmConnector, { OpenaiProvider } from '@rcb-plugins/llm-connector';
 import MarkdownRenderer from '@rcb-plugins/markdown-renderer';
+import ErrorBoundary from './components/ErrorBoundary';
+import { validateApiKey, getEnvironmentInfo } from './utils/config';
 
 // 🔑 API Configuration
-const OPENAI_API_KEY = process.env.REACT_APP_OPENAI_API_KEY;
-const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
+const { apiKey, isDevelopment } = getEnvironmentInfo();
 
 // 🎯 Optimized Conversation Flow with OpenAI GPT-4o-mini
 const flow = {
@@ -103,8 +104,9 @@ I'll connect you to my **OpenAI ** assistant:
 - 🔐 **Secure:** Direct OpenAI API connection
 - ⚡ **Fast:** Optimized for speed and efficiency
 
-*Ready to chat with BULU AI!? 
-ℹ️Pleaae Click on **"Start Over"** & Select **AI Chat!** 🤖✨`
+*Ready to chat with BULU AI!?* 
+
+ℹ️ Please click on **"Start Over"** & Select **"AI Chat!"** 🤖✨`
       };
       
       return responses[params.userInput] || `### I'm here to help! 💡
@@ -171,7 +173,7 @@ Feel free to reach out anytime at [info@burhanulu.com](mailto:info@burhanulu.com
       provider: new OpenaiProvider({
         mode: 'direct',                                    // ✅ Simplified for testing
         model: 'gpt-4o-mini',                             // ✅ Correct model name
-        apiKey: OPENAI_API_KEY,                           // ✅ Direct API key
+        apiKey: apiKey,
         temperature: 0.7,
         maxTokens: 500,                                   // ✅ Reduced for faster responses
         systemPrompt: `You are BULU (Burhan), a AIOps, Observability SME & SRE Leader with 11+ years at Accenture. 
@@ -263,6 +265,21 @@ const themes = [
 
 // 🚀 Main App Component
 function App() {
+  const [apiValidation, setApiValidation] = useState(null);
+  
+  useEffect(() => {
+    const validation = validateApiKey(apiKey);
+    setApiValidation(validation);
+    
+    // Only log in development
+    if (isDevelopment) {
+      console.log('🔑 API Key Status:', validation.isValid ? 'Valid' : 'Invalid');
+      if (!validation.isValid) {
+        console.warn('⚠️ API Key Issue:', validation.error);
+      }
+    }
+  }, []);
+  
   const plugins = [
     LlmConnector({
       autoConfig: true
@@ -271,19 +288,47 @@ function App() {
       autoConfig: true
     })
   ];
+  
+  // Show error message if API key is invalid
+  if (apiValidation && !apiValidation.isValid) {
+    return (
+      <div style={{
+        position: 'fixed',
+        bottom: '20px',
+        right: '20px',
+        maxWidth: '350px',
+        padding: '15px',
+        backgroundColor: '#fff5f5',
+        border: '1px solid #feb2b2',
+        borderRadius: '8px',
+        boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+        fontFamily: 'Arial, sans-serif',
+        zIndex: 9999
+      }}>
+        <div style={{ color: '#e53e3e', fontWeight: 'bold', marginBottom: '8px' }}>
+          🚨 Configuration Error
+        </div>
+        <div style={{ color: '#666', fontSize: '14px', marginBottom: '10px' }}>
+          {apiValidation.error}
+        </div>
+        <div style={{ fontSize: '12px', color: '#999' }}>
+          Check your .env file or contact: 
+          <a href="mailto:info@burhanulu.com" style={{ color: '#d67c06' }}>info@burhanulu.com</a>
+        </div>
+      </div>
+    );
+  }
 
-// Debug API key
-console.log('API Key loaded:', OPENAI_API_KEY ? 'YES' : 'NO');
-console.log('Environment:', IS_DEVELOPMENT ? 'DEVELOPMENT' : 'PRODUCTION');
 
   return (
-    <div className="App">
-      <ChatBot 
-        flow={flow} 
-        settings={settings}
-        themes={themes}
-        plugins={plugins}
-      />
+    <ErrorBoundary>
+      <div className="App">
+        <ChatBot 
+          flow={flow} 
+          settings={settings}
+          themes={themes}
+          plugins={plugins}
+        />
       
       {/* 🎨 Enhanced Styling */}
       <style jsx global>{`
@@ -345,7 +390,8 @@ console.log('Environment:', IS_DEVELOPMENT ? 'DEVELOPMENT' : 'PRODUCTION');
           color: #d67c06 !important;
         }
       `}</style>
-    </div>
+      </div>
+    </ErrorBoundary>
   );
 }
 
